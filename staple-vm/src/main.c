@@ -15,10 +15,12 @@ int main(int argc, char **argv) {
 		return EXIT_FAILURE;
 	}
 
+	// Compile
 	if (strcmp(argv[1], "compile") == 0) { // Return value without var
 		char *source = read_ascii_file(argv[2]);
 
-		
+		TokenList tokens;
+		parser_start(&tokens, source);
 		
 		free(source); // Free the returned buffer when done
 	}
